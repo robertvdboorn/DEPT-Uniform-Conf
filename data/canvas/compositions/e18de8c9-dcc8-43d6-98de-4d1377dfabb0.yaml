@@ -1,0 +1,89 @@
+composition:
+  _name: Playground
+  _id: e18de8c9-dcc8-43d6-98de-4d1377dfabb0
+  _slug: playground
+  type: page
+  parameters: {}
+  slots:
+    footer:
+      - _id: 61b46636-5205-4b8f-aab0-50a68be9476d
+        type: footer
+    header:
+      - _id: 5dc6d62d-36a5-44f7-9f7d-0609cc54fd64
+        type: header
+    content:
+      - _id: 1a1dfc67-b675-476b-9a4c-a4f746e8086f
+        type: $personalization
+        slots:
+          pz:
+            - _id: 5af97791-2ffb-42dc-bd2f-1119b2ee698e
+              type: hero
+              parameters:
+                text:
+                  type: text
+                  value: This hero is personalized for Retail Customers
+                title:
+                  type: text
+                  value: Personalized Hero
+                $pzCrit:
+                  type: $pzCrit
+                  value:
+                    crit:
+                      - l: customerInRetail
+                        r: 0
+                        op: '>'
+                    name: ''
+            - _id: 61dea3fb-8bf7-4676-aec4-c310cd961963
+              type: $loop
+              slots:
+                body:
+                  - _id: f74d3924-53a8-44af-a6b5-5cbdc362dfed
+                    type: hero
+                    parameters:
+                      text:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Contentful Heros items Loop Item/fields/description
+                          required: false
+                      title:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Contentful Heros items Loop Item/fields/title
+                          required: false
+                      buttonLink:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: >-
+                            /Contentful Heros items Loop
+                            Item/fields/buttonLinkSlug
+                          required: false
+                      buttonText:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Contentful Heros items Loop Item/fields/buttonText
+                          required: false
+              _dataResources:
+                Contentful Heros items Loop Item:
+                  type: sys-reserved-loop
+                  variables:
+                    connectedData: /Contentful Heros/items
+                    connectedDataRequired: 'false'
+        parameters:
+          trackingEventName:
+            type: text
+            value: P13N Hero
+  _dataResources:
+    Contentful Heros:
+      type: contentful-heros
+      variables: {}
+created: '2022-11-24T10:29:37.176392+00:00'
+modified: '2022-11-24T10:29:37.176392+00:00'
+pattern: false

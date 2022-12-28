@@ -1,0 +1,9 @@
+id: cdpLoader
+name: CDP Loader
+icon: screen
+parameters: []
+useTeamPermissions: true
+slots: []
+canBeComposition: false
+created: '2022-11-24T10:29:30.292779+00:00'
+updated: '2022-11-24T10:29:30.292779+00:00'

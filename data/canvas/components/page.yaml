@@ -1,0 +1,46 @@
+id: page
+name: Page
+icon: file-document
+parameters: []
+useTeamPermissions: true
+slots:
+  - id: header
+    name: Header
+    allowedComponents:
+      - header
+    inheritAllowedComponents: false
+  - id: content
+    name: content
+    allowedComponents:
+      - $test
+      - hero
+      - $personalization
+      - registrationForm
+      - talklist
+      - whyattend
+      - $loop
+      - cdpLoader
+      - heroCms
+    inheritAllowedComponents: false
+  - id: footer
+    name: Footer
+    allowedComponents:
+      - footer
+    inheritAllowedComponents: false
+defaults:
+  type: page
+  slots:
+    footer:
+      - type: footer
+        parameters: {}
+    header:
+      - type: header
+        parameters: {}
+slugSettings:
+  unique: global
+  required: 'yes'
+  regularExpression: ^[^/\\#?-]([A-Za-z0-9\-\ ]+)
+  regularExpressionMessage: No forward slash in beginning of Slug
+canBeComposition: true
+created: '2022-11-24T10:29:31.295647+00:00'
+updated: '2022-11-24T12:15:45.943586+00:00'

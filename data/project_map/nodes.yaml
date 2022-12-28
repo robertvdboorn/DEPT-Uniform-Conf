@@ -1,0 +1,57 @@
+projectMapNodes:
+  - id: 267e694a-970d-452b-9df2-b0f41cd216f0
+    name: Home
+    type: composition
+    order: 500
+    path: /
+    compositionId: ecf48923-00c6-4d2b-8493-b1e0895d2807
+    pathSegment: ''
+    projectMapId: 89a71694-0f0e-4bbd-9e2f-d5728f234b19
+  - id: 0ba28351-50f4-4d68-b81e-64821d30a6ee
+    name: CDP Loader
+    type: composition
+    order: 600
+    path: /cdp-loader
+    compositionId: 491d4b33-41d5-4aba-803a-59c9237a88bf
+    pathSegment: cdp-loader
+    projectMapId: 89a71694-0f0e-4bbd-9e2f-d5728f234b19
+  - id: fad49e5b-77c6-4480-9c8b-f48cf64e1119
+    name: For Developers
+    type: composition
+    order: 600
+    path: /developers
+    compositionId: ae563e0f-cda2-4ef7-94d7-9ef5b640759b
+    pathSegment: developers
+    projectMapId: 89a71694-0f0e-4bbd-9e2f-d5728f234b19
+  - id: a47543df-bae7-457a-bdea-97370ee3f03d
+    name: For Marketers
+    type: composition
+    order: 600
+    path: /marketers
+    compositionId: 00bd4d8b-0929-4150-ae56-a22e0fe44c9f
+    pathSegment: marketers
+    projectMapId: 89a71694-0f0e-4bbd-9e2f-d5728f234b19
+  - id: 444e1557-99da-45bc-94f9-bad8ad5a2381
+    name: Playground
+    type: composition
+    order: 500
+    path: /playground
+    compositionId: e18de8c9-dcc8-43d6-98de-4d1377dfabb0
+    pathSegment: playground
+    projectMapId: 89a71694-0f0e-4bbd-9e2f-d5728f234b19
+  - id: 105e9c82-da86-48c3-8457-243c5ada0027
+    name: Registration
+    type: composition
+    order: 600
+    path: /registration
+    compositionId: 39a1d122-950b-4a1c-b245-ba0deb2c4a0d
+    pathSegment: registration
+    projectMapId: 89a71694-0f0e-4bbd-9e2f-d5728f234b19
+  - id: 881e780f-cf6b-45c1-8075-4ec5c8c5eca5
+    name: test
+    type: composition
+    order: 550
+    path: /test
+    compositionId: 7199e691-0cd1-4d10-b3ef-086c6f6f0394
+    pathSegment: test
+    projectMapId: 89a71694-0f0e-4bbd-9e2f-d5728f234b19

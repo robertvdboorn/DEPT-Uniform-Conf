@@ -1,0 +1,21 @@
+id: talklist
+name: Talklist
+icon: mic
+parameters:
+  - id: title
+    name: Title
+    type: text
+    typeConfig: null
+useTeamPermissions: true
+slots:
+  - id: talks
+    name: talks
+    allowedComponents:
+      - talk
+      - $personalization
+      - $loop
+    inheritAllowedComponents: false
+titleParameter: title
+canBeComposition: false
+created: '2022-11-24T10:29:32.014996+00:00'
+updated: '2022-11-24T10:29:32.014996+00:00'

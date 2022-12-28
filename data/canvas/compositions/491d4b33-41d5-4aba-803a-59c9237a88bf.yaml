@@ -1,0 +1,19 @@
+composition:
+  _name: CDP Loader
+  _id: 491d4b33-41d5-4aba-803a-59c9237a88bf
+  _slug: cdp-loader
+  type: page
+  parameters: {}
+  slots:
+    footer:
+      - _id: 539072b6-8947-46d8-9fb9-d4fd52df1f0b
+        type: footer
+    header:
+      - _id: 6c5e55b7-c5b0-40e0-b3a4-7375e46eb234
+        type: header
+    content:
+      - _id: 52f92b74-1794-4fa0-b789-f7ad5e937da7
+        type: cdpLoader
+created: '2022-11-24T10:29:33.04299+00:00'
+modified: '2022-11-24T10:29:33.04299+00:00'
+pattern: false

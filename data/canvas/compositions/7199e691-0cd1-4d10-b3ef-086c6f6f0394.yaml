@@ -1,0 +1,25 @@
+composition:
+  _name: test
+  _id: 7199e691-0cd1-4d10-b3ef-086c6f6f0394
+  _slug: test
+  type: page
+  parameters: {}
+  slots:
+    footer:
+      - _id: 0da08aae-9471-4951-b5b1-c9e8fa0cc637
+        type: footer
+    header:
+      - _id: b91582eb-fd9a-42fa-8c9b-42cbe93c5e97
+        type: header
+    content:
+      - _id: 3168592c-1425-4677-bbb9-7a993eb34c55
+        type: heroCms
+        parameters:
+          cmsEntry:
+            type: contentfulEntry
+            value:
+              source: default
+              entryId: 4M8oksXdDTHLWCZPKSjBQ3
+created: '2022-11-28T16:52:55.322194+00:00'
+modified: '2022-11-28T16:56:14.199372+00:00'
+pattern: false
