@@ -2,7 +2,6 @@ import { ComponentInstance } from '@uniformdev/canvas';
 
 export const kontentModelConverter = ({ component, parameter }: { component: ComponentInstance; parameter: any }) => {
 
-    console.log(parameter?.value?.elements?.image?.value[0]?.url )
     if (component.type === 'heroKontentai') {
         const returnValue = {
             title: parameter?.value?.elements?.title?.value || '', 
