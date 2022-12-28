@@ -21,6 +21,10 @@ const nextConfig = {
     contentfulDeliveryToken: process.env.CONTENTFUL_CDA_ACCESS_TOKEN,
     kontentProjectId: process.env.KONTENT_PROJECT_ID,
     kontentDeliveryKey: process.env.KONTENT_DELIVERY_API_KEY,
+    contentstackApiKey: process.env.CONTENTSTACK_API_KEY,
+    contentstackDeliveryToken: process.env.CONTENTSTACK_DELIVERY_TOKEN,
+    contentstackEnvironment: process.env.CONTENTSTACK_ENVIRONMENT,
+    contentstackRegion: process.env.CONTENTSTACK_REGION
   },
   publicRuntimeConfig: {
     gaTrackingId: process.env.GA4_ID,

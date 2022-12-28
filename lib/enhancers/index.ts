@@ -7,6 +7,9 @@ import { contentfulModelConverter } from "./contentful/contentfulModelConverter"
 import { CANVAS_KONTENT_PARAMETER_TYPES } from "@uniformdev/canvas-kontent";
 import { kontentEnhancer } from "./kontent/kontentEnhancer";
 import { kontentModelConverter } from "./kontent/kontentModelConverter";
+import { CANVAS_CONTENTSTACK_PARAMETER_TYPES } from "@uniformdev/canvas-contentstack";
+import { contentstackEnhancer } from "./contentstack/contentstackEnhancer";
+import { contentStackModelConverter } from "./contentstack/contentstackModelConverter";
 
 const { serverRuntimeConfig } = getConfig();
 const {
@@ -14,13 +17,21 @@ const {
   contentfulDeliveryToken,
   contentfulEnvironment,
   kontentProjectId,
-  kontentDeliveryKey
+  kontentDeliveryKey,
+  contentstackApiKey,
+  contentstackDeliveryToken,
+  contentstackEnvironment,
+  contentstackRegion,
 } = serverRuntimeConfig;
 
 const contentfulConfigured: boolean =
   contentfulSpaceId !== undefined && contentfulDeliveryToken !== undefined && contentfulEnvironment !== undefined;
-  const kontentConfigured: boolean =
+
+const kontentConfigured: boolean =
   kontentProjectId !== undefined && kontentDeliveryKey !== undefined;
+
+const contentstackConfigured: boolean = 
+  contentstackApiKey !== undefined && contentstackDeliveryToken !== undefined && contentstackEnvironment !== undefined && contentstackRegion !== undefined;
 
 export const enhancers = new EnhancerBuilder();
 
@@ -32,6 +43,11 @@ if (contentfulConfigured) {
 if (kontentConfigured) {
   console.log("Registered Kontent Enhancer");
   enhancers.parameterType(CANVAS_KONTENT_PARAMETER_TYPES, compose(kontentEnhancer(), kontentModelConverter))
+}
+
+if (contentstackConfigured) {
+  console.log("Registered Contentstack Enhancer");
+  enhancers.parameterType(CANVAS_CONTENTSTACK_PARAMETER_TYPES, compose(contentstackEnhancer(), contentStackModelConverter))
 }
 
 enhancers.parameter((e) => {

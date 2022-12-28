@@ -9,6 +9,7 @@ import { Talk } from './Talk';
 import { RegisterForm } from './RegisterForm';
 
 import { HeroKontent } from './HeroKontent';
+import { HeroContentstack } from './HeroContentstack';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -23,7 +24,8 @@ const mappings: ComponentMapping = {
   footer: Footer,
   Talk: Talk,
   Hero: Hero,
-  heroKontentai: HeroKontent
+  heroKontentai: HeroKontent,
+  heroContentstack: HeroContentstack
 };
 
 type ComponentMapping = Record<string, ComponentType<any>>;
