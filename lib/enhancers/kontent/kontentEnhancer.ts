@@ -5,8 +5,6 @@ import { DeliveryClient } from '@kentico/kontent-delivery';
 export const kontentEnhancer = () => {
     const { serverRuntimeConfig } = getConfig();
     const { kontentProjectId, kontentDeliveryKey } = serverRuntimeConfig;
-
-    console.log(kontentProjectId);
     const client = new DeliveryClient({
         projectId: kontentProjectId,
         secureApiKey: kontentDeliveryKey
