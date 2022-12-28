@@ -1,4 +1,4 @@
-import { Asset, Entry } from "contentful";
+import { Asset } from "contentful";
 import { ComponentInstance } from '@uniformdev/canvas';
 
 export const contentfulModelConverter = ({ component, parameter }: { component: ComponentInstance; parameter: any }) => {

@@ -72,10 +72,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { nodes } = await projectMapClient.getNodes({
-    projectId,
-    projectMapId,
-  });
+  const { nodes } = await projectMapClient.getNodes({ projectMapId });
 
   const ids = nodes?.filter((node) => node.compositionId!).map((node) => node.path.split('/').filter(Boolean)) ?? []
   const paths =ids.flatMap((id) => [

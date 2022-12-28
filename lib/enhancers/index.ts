@@ -4,26 +4,34 @@ import getConfig from "next/config";
 import { CANVAS_CONTENTFUL_PARAMETER_TYPES } from "@uniformdev/canvas-contentful";
 import { contentfulEnhancer } from "./contentful/contentfulEnhancer";
 import { contentfulModelConverter } from "./contentful/contentfulModelConverter";
-import { DefaultNotImplementedComponent } from "@uniformdev/canvas-react";
-import { STRAPI_PARAMETER_TYPES } from "@uniformdev/canvas-strapi";
-import {
-  CANVAS_ALGOLIA_QUERY_PARAMETER_TYPES,
-  CANVAS_ALGOLIA_RECORD_PARAMETER_TYPES,
-} from '@uniformdev/canvas-algolia';
+import { CANVAS_KONTENT_PARAMETER_TYPES } from "@uniformdev/canvas-kontent";
+import { kontentEnhancer } from "./kontent/kontentEnhancer";
+import { kontentModelConverter } from "./kontent/kontentModelConverter";
 
 const { serverRuntimeConfig } = getConfig();
 const {
-    contentfulSpaceId,
+  contentfulSpaceId,
   contentfulDeliveryToken,
   contentfulEnvironment,
+  kontentProjectId,
+  kontentDeliveryKey
 } = serverRuntimeConfig;
 
 const contentfulConfigured: boolean =
   contentfulSpaceId !== undefined && contentfulDeliveryToken !== undefined && contentfulEnvironment !== undefined;
+  const kontentConfigured: boolean =
+  kontentProjectId !== undefined && kontentDeliveryKey !== undefined;
+
 export const enhancers = new EnhancerBuilder();
 
 if (contentfulConfigured) {
+  console.log("Registered Contentful Enhancer");
   enhancers.parameterType(CANVAS_CONTENTFUL_PARAMETER_TYPES, compose(contentfulEnhancer(), contentfulModelConverter))
+}
+
+if (kontentConfigured) {
+  console.log("Registered Kontent Enhancer");
+  enhancers.parameterType(CANVAS_KONTENT_PARAMETER_TYPES, compose(kontentEnhancer(), kontentModelConverter))
 }
 
 enhancers.parameter((e) => {

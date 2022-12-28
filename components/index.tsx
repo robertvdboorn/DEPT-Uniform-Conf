@@ -8,6 +8,8 @@ import { WhyAttend } from './WhyAttend';
 import { Talk } from './Talk';
 import { RegisterForm } from './RegisterForm';
 
+import { HeroKontent } from './HeroKontent';
+
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -21,6 +23,7 @@ const mappings: ComponentMapping = {
   footer: Footer,
   Talk: Talk,
   Hero: Hero,
+  heroKontentai: HeroKontent
 };
 
 type ComponentMapping = Record<string, ComponentType<any>>;
