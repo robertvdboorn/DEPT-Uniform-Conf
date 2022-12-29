@@ -10,7 +10,7 @@ export const contentstackEnhancer = () => {
         api_key: contentstackApiKey,
         delivery_token: contentstackDeliveryToken,
         environment: contentstackEnvironment,
-        region: contentstack.Region.US,
+        region: contentstackRegion,
     });
 
     return createContentstackEnhancer({ client });
