@@ -1,7 +1,10 @@
 import getConfig from "next/config";
-import { createContentfulEnhancer, CreateContentfulQueryOptions } from "@uniformdev/canvas-contentful";
+import {
+  createContentfulEnhancer,
+  CreateContentfulQueryOptions,
+} from "@uniformdev/canvas-contentful";
 import { createClient } from "contentful";
-import { GetStaticPropsContext } from "next"
+import { GetStaticPropsContext } from "next";
 const { serverRuntimeConfig } = getConfig();
 const { contentfulSpaceId, contentfulDeliveryToken, contentfulPreviewToken } =
   serverRuntimeConfig;
@@ -37,16 +40,15 @@ export const contentfulEnhancer = () => {
     client,
     previewClient,
     useBatching: false,
-    createQuery: ({ defaultQuery, context }: CreateContentfulQueryOptions<GetStaticPropsContext>) => {
-
-      const locale = context.locale ?? context.defaultLocale ?? 'en-US';
-
-      return {
-        ...defaultQuery,
-        select: "fields",
-        include: 2,
-        locale,
-      };
+    createQuery: ({
+      defaultQuery,
+      context,
+    }: CreateContentfulQueryOptions<GetStaticPropsContext>) => {
+      const locale = context.locale ?? context.defaultLocale ?? "en-US";
+      defaultQuery.locale = locale;
+      defaultQuery.select = ["fields"];
+      defaultQuery.include = 2;
+      return defaultQuery;
     },
   });
 };
