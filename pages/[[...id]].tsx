@@ -84,6 +84,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: false,
   };
 };
+
 async function getProps(context: GetStaticPropsContext) {
   const slug = context?.params?.id;
   const slugString = Array.isArray(slug) ? slug.join("/") : slug;
